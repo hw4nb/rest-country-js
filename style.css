@@ -1,5 +1,114 @@
+:root {
+  --width: 1000px;
+}
+
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* HEADER */
+.header {
+  border-bottom: 1px solid #eee;
+  margin-inline: auto;
+  max-width: var(--width);
+  padding-block: 20px;
+}
+
+/* MAIN */
+.container {
+  background-color: #fafafa;
+  min-height: calc(100vh - 80px);
+}
+
+/* FORM */
+.form {
+  margin-inline: auto;
+  max-width: var(--width);
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-container {
+  width: 100%;
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  left: 20px;
+}
+
+.input {
+  background-color: #fff;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 40px 0.2px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+.input-field {
+  min-width: 600px;
+  padding: 10px 10px 10px 50px;
+}
+
+.input-field:focus {
+  outline-width: 0;
+}
+
+.select-field {
+  padding: 10px;
+}
+
+.select-field:focus {
+  outline-width: 0;
+}
+
+/* COUNTRIES */
+.countries {
+  margin-block: 50px;
+  margin-inline: auto;
+  max-width: var(--width);
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.country-card {
+  background-color: #fff;
+  box-shadow: 0px 0px 40px 0.2px rgba(0, 0, 0, 0.1);
+}
+
+.country-img {
+  width: 100%;
+  object-fit: cover;
+  height: 120px;
+}
+
+.country-name {
+  margin-bottom: 16px;
+}
+
+.country-detail {
+  padding: 25px 20px;
+}
+
+.country-detail p {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.country-detail span {
+  font-weight: 400;
 }
