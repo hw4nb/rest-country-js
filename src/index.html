@@ -10,28 +10,18 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Vite App</title>
+    <title>Rest Country</title>
   </head>
 
   <body>
-    <header class="header">
-      <h1>Where in the world?</h1>
-    </header>
+    <a class="title" href="#">
+      <header class="header">
+        <h1>Where in the world?</h1>
+      </header>
+    </a>
     <main class="container">
-      <form class="form">
-        <div class="input-container">
-          <img class="input-icon" src="./assets/search.svg" />
-          <input
-            id="search"
-            class="input input-field"
-            type="search"
-            placeholder="Search for a country..."
-          />
-        </div>
-        <select class="region input select-field"></select>
-      </form>
-      <section class="countries"></section>
+      <section id="root"></section>
     </main>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

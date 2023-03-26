@@ -1,5 +1,6 @@
 :root {
   --width: 1000px;
+  --padding: 40px;
 }
 
 * {
@@ -14,11 +15,18 @@ body {
 }
 
 /* HEADER */
+.title,
+.title:active,
+.title:visited {
+  color: #000;
+  text-decoration: none;
+}
+
 .header {
-  border-bottom: 1px solid #eee;
   margin-inline: auto;
   max-width: var(--width);
   padding-block: 20px;
+  padding-inline: var(--padding);
 }
 
 /* MAIN */
@@ -32,22 +40,25 @@ body {
   margin-inline: auto;
   max-width: var(--width);
   padding-top: 50px;
+  padding-inline: var(--padding);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
 }
 
 .input-container {
-  width: 100%;
   position: relative;
+  flex-grow: 1;
 }
 
 .input-icon {
-  position: absolute;
-  width: 16px;
   height: 16px;
-  top: calc(50% - 8px);
   left: 20px;
+  position: absolute;
+  top: calc(50% - 8px);
+  width: 16px;
 }
 
 .input {
@@ -59,8 +70,9 @@ body {
 }
 
 .input-field {
-  min-width: 600px;
   padding: 10px 10px 10px 50px;
+  width: 70%;
+  min-width: 200px;
 }
 
 .input-field:focus {
@@ -80,24 +92,26 @@ body {
   margin-block: 50px;
   margin-inline: auto;
   max-width: var(--width);
+  padding-inline: var(--padding);
   display: grid;
-  gap: 50px;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .country-card,
 .country-card:active,
 .country-card:visited {
-  color: #000;
-  text-decoration: none;
   background-color: #fff;
+  border-radius: 10px;
   box-shadow: 0 0 40px 0.2px rgb(0 0 0 / 10%);
+  color: #000;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .country-img {
   width: 100%;
   object-fit: cover;
-  height: 120px;
 }
 
 .country-name {
@@ -115,4 +129,66 @@ body {
 
 .country-detail span {
   font-weight: 400;
+}
+
+/* COUNTRY */
+.arrow-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.country {
+  display: block;
+  margin-block-start: 0;
+  padding-block-start: 50px;
+  max-width: 1200px;
+}
+
+.country a,
+.country a:visited,
+.country a:active {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: ;
+  box-shadow: 0 0 40px 0.2px rgb(0 0 0 / 10%);
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 30px;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.country-info {
+  display: grid;
+  align-items: center;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-block-start: 50px;
+}
+
+.country-info .country-detail {
+  padding: 0;
+}
+
+.country-info .country-detail h4 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.country-info .country-detail .info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  margin-block-end: 40px;
+}
+
+.country-info .country-detail p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
 }
