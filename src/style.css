@@ -120,15 +120,15 @@ body {
 
 .country-detail {
   padding: 25px 20px;
-}
 
-.country-detail p {
-  font-weight: 700;
-  margin-bottom: 5px;
-}
+  & p {
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
 
-.country-detail span {
-  font-weight: 400;
+  span {
+    font-weight: 400;
+  }
 }
 
 /* COUNTRY */
@@ -150,7 +150,6 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
-
   background-color: #fff;
   border-radius: 5px;
   box-shadow: ;
@@ -169,26 +168,26 @@ body {
   gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-block-start: 50px;
-}
 
-.country-info .country-detail {
-  padding: 0;
-}
+  .country-detail {
+    padding: 0;
 
-.country-info .country-detail h4 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
+    h4 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
 
-.country-info .country-detail .info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 40px;
-  margin-block-end: 40px;
-}
+    .info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 40px;
+      margin-block-end: 40px;
+    }
 
-.country-info .country-detail p {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
 }
