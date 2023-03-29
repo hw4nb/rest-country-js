@@ -74,8 +74,9 @@ body {
     }
 
     &__field {
-      padding: 10px;
+      cursor: pointer;
       min-width: 150px;
+      padding: 10px;
 
       &:focus {
         outline-width: 0;
