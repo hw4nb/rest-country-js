@@ -1,13 +1,16 @@
-<form class="form">
-  <div class="input-container">
-    <img class="input-icon" src="search.svg" />
+<form id="form" class="form">
+  <div class="form__input">
+    <img class="form__input__icon icon" src="search.svg" />
     <input
       id="search"
-      class="input input-field"
+      class="form__input__field input"
       type="search"
       placeholder="Search for a country..."
     />
   </div>
-  <select class="region input select-field"></select>
+  <div class="form__select">
+    <img class="form__select__icon icon" src="chevron-down.svg" />
+    <select id="region" class="form__select__field input"></select>
+  </div>
 </form>
-<section class="countries"></section>
+<section id="countries" class="countries"></section>

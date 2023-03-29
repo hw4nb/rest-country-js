@@ -19,17 +19,15 @@ export default () => {
   divElement.innerHTML = template
 
   const cleanRoute = window.location.hash.replace('#/', '')
-  const countryHtml = divElement.querySelector('.country-info')
+  const countryHtml = divElement.querySelector('#country-full__info')
 
   const createCountry = country => {
-    console.log(country)
     countryHtml.innerHTML = `
-      <img class="country-img" src=${country.flags.png} alt=${
-      country.flags.alt
-    } />
-      <div class="country-detail">
+      <img class="country-full__info__img" src=${country.flags.png}
+      alt=${country.flags.alt} />
+      <div class="country-full__info__detail">
         <h4>${country.name.common}</h4>
-        <div class="info">
+        <div class="detail">
           <div>
             <p>Native Name:
               <span>

@@ -20,20 +20,20 @@ export default () => {
   const divElement = document.createElement('div')
   divElement.innerHTML = template
 
-  const countriesHtml = divElement.querySelector('.countries')
-  const regionSelect = divElement.querySelector('.region')
-  const form = divElement.querySelector('.form')
+  const countriesHtml = divElement.querySelector('#countries')
+  const regionSelect = divElement.querySelector('#region')
+  const form = divElement.querySelector('#form')
   const search = divElement.querySelector('#search')
 
   const createRegionList = () => {
     regionSelect.innerHTML = `
-    <option value="" disabled selected hidden>Filter by Region</option>
-    ${REGIONS.map(
-      region => `
-      <option>${region}</option>
+      <option value="" disabled selected hidden>Filter by Region</option>
+      ${REGIONS.map(
+        region => `
+        <option>${region}</option>
+      `
+      ).join('')}
     `
-    ).join('')}
-  `
   }
 
   const createCountry = countries => {
@@ -41,19 +41,18 @@ export default () => {
 
     countries.forEach(country => {
       const a = document.createElement('a')
-      a.classList.add('country-card')
+      a.classList.add('country')
       a.href = `#/${country.name.common.toLowerCase()}`
       a.innerHTML = `
-      <img class="country-img" src=${country.flags.png} alt=${
-        country.flags.alt
-      } />
-      <div class="country-detail">
-        <h3 class="country-name">${country.name.common}</h3>
-        <p>Population: <span>${country.population.toLocaleString()}</span></p>
-        <p>Region: <span>${country.region}</span></p>
-        <p>Capital: <span>${country.capital[0]}</span></p>
-      </div>
-    `
+        <img class="country__img" src=${country.flags.png}
+        alt=${country.flags.alt} />
+        <div class="country__detail">
+          <h3 class="country__detail__name">${country.name.common}</h3>
+          <p>Population: <span>${country.population.toLocaleString()}</span></p>
+          <p>Region: <span>${country.region}</span></p>
+          <p>Capital: <span>${country.capital[0]}</span></p>
+        </div>
+      `
       fragment.appendChild(a)
     })
     countriesHtml.innerHTML = ''
