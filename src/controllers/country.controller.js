@@ -1,8 +1,8 @@
-import { environment } from '../environments/environment'
 import template from '../views/country.html?raw'
 
 const fetchCountry = async country => {
-  const url = `${environment.apiUrl}/name/${country}?fullText=true`
+  const url = `${import.meta.env.VITE_API_URL}/name/${country}?fullText=true`
+
   try {
     const response = await fetch(url)
     const country = await response.json()
@@ -67,6 +67,5 @@ export default () => {
   }
 
   fetchCountry(cleanRoute).then(createCountry)
-
   return divElement
 }

@@ -1,8 +1,9 @@
-import { environment } from '../environments/environment'
 import template from '../views/home.html?raw'
 
 const REGIONS = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
-const URL = `${environment.apiUrl}/all?fields=name,flags,population,region,capital`
+const URL = `${
+  import.meta.env.VITE_API_URL
+}/all?fields=name,flags,population,region,capital`
 
 const fetchCountries = async url => {
   try {
@@ -55,6 +56,7 @@ export default () => {
       `
       fragment.appendChild(a)
     })
+
     countriesHtml.innerHTML = ''
     countriesHtml.appendChild(fragment)
   }
@@ -62,7 +64,9 @@ export default () => {
   const searchCountry = () => {
     regionSelect.addEventListener('change', e => {
       const { value } = e.target
-      const url = `${environment.apiUrl}/region/${value.toLowerCase()}`
+      const url = `${
+        import.meta.env.VITE_API_URL
+      }/region/${value.toLowerCase()}`
       if (value) fetchCountries(url).then(createCountry)
     })
 
@@ -76,7 +80,9 @@ export default () => {
     form.addEventListener('submit', e => {
       e.preventDefault()
       const { value } = search
-      const url = `${environment.apiUrl}/name/${value}?fields=name,flags,population,region,capital`
+      const url = `${
+        import.meta.env.VITE_API_URL
+      }/name/${value}?fields=name,flags,population,region,capital`
       fetchCountries(url).then(createCountry)
     })
   }
@@ -84,6 +90,5 @@ export default () => {
   createRegionList()
   searchCountry()
   fetchCountries(URL).then(createCountry)
-
   return divElement
 }
