@@ -1,6 +1,10 @@
+@custom-media --sm (max-width: 500px);
+@custom-media --md (max-width: 800px);
+
 :root {
   --width: 1000px;
   --padding-inline: 40px;
+  --padding-inling-sm: 20px;
   --padding-block: 50px;
   --radius: 10px;
   --shadow: 0 0 40px 0.2px rgb(0 0 0 / 10%);
@@ -22,6 +26,10 @@ body {
   padding-block: 20px;
   padding-inline: var(--padding-inline);
 
+  @media (--sm) {
+    padding-inline: var(--padding-inling-sm);
+  }
+
   &__title {
     display: inline;
     font-size: 28px;
@@ -37,15 +45,17 @@ body {
 
 /* FORM */
 .form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-inline: auto;
   max-width: var(--width);
   padding-inline: var(--padding-inline);
   padding-top: var(--padding-block);
 
-  /* Display */
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  @media (--sm) {
+    padding-inline: var(--padding-inling-sm);
+  }
 
   &__input {
     flex-grow: 1;
@@ -59,6 +69,10 @@ body {
       padding: 10px 10px 10px 50px;
       width: 75%;
       min-width: 200px;
+
+      @media (--md) {
+        width: 100%;
+      }
 
       &:focus {
         outline-width: 0;
@@ -102,15 +116,17 @@ body {
 
 /* COUNTRIES LIST */
 .countries {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   margin-inline: auto;
   max-width: var(--width);
   padding-block: var(--padding-block);
   padding-inline: var(--padding-inline);
 
-  /* Display */
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  @media (--sm) {
+    padding-inline: var(--padding-inling-sm);
+  }
 }
 
 .country {
@@ -119,8 +135,8 @@ body {
   overflow: hidden;
 
   &__detail {
-    padding: 20px;
     font-weight: 700;
+    padding: 20px;
 
     &__name {
       font-size: 16px;
@@ -160,6 +176,10 @@ body {
   padding-block: var(--padding-block);
   padding-inline: var(--padding-inline);
 
+  @media (--sm) {
+    padding-inline: var(--padding-inling-sm);
+  }
+
   &__info {
     display: grid;
     align-items: center;
@@ -168,8 +188,8 @@ body {
     margin-block-start: 50px;
 
     &__detail {
-      padding: 0;
       font-weight: 700;
+      padding: 0;
 
       h4 {
         font-size: 28px;
@@ -178,8 +198,8 @@ body {
 
       .detail {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         margin-block-end: 40px;
       }
 

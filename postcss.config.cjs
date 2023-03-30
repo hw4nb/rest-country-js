@@ -3,5 +3,6 @@ module.exports = {
     'postcss-nested': {},
     autoprefixer: {},
     stylelint: {},
+    'postcss-custom-media': {},
   },
 }

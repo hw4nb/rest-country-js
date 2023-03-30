@@ -14,6 +14,7 @@
     "autoprefixer": "^10.4.14",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "postcss-custom-media": "^9.1.2",
     "postcss-nested": "^6.0.1",
     "prettier": "^2.8.7",
     "standard": "^17.0.0",
