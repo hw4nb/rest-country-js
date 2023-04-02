@@ -28,7 +28,7 @@ export default () => {
       <div class="country-full__info__detail">
         <h4>${country.name.common}</h4>
         <div class="detail">
-          <div>
+          <div class="detail__item">
             <p>Native Name:
               <span>
                 ${
@@ -43,7 +43,7 @@ export default () => {
             <p>Sub Region: <span>${country.subregion}</span></p>
             <p>Capital: <span>${country.capital}</span></p>
           </div>
-          <div>
+          <div class="detail__item">
             <p>Top Level Domain: <span>${country.tld[0]}</span></p>
             <p>Currencies:
               <span>
